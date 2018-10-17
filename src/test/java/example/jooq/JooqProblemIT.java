@@ -17,7 +17,7 @@ public class JooqProblemIT {
 
     @BeforeClass
     public static void init() throws IOException {
-        LOG.info("Initializing database");
+        LOG.info("Initializing connection");
 
         final String jdbcUrl = buildDatabaseJDBCUrl();
         ctx = DSL.using(jdbcUrl);
@@ -41,7 +41,7 @@ public class JooqProblemIT {
 
     @Test
     public void test() {
-        LOG.info("TODO");
+        LOG.info("Running tests");
         final JooqProblem p = new JooqProblem();
 
         p.doTestOne(ctx);
