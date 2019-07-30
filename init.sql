@@ -1,32 +1,15 @@
 CREATE SCHEMA IF NOT EXISTS jooq_test_catalog;
 
-CREATE TYPE jooq_test_catalog.prediction AS (
-  x1 NUMERIC(5, 4),
-  y1 NUMERIC(5, 4),
-  x2 NUMERIC(5, 4),
-  y2 NUMERIC(5, 4),
-
-  label varchar(20),
-  confidence NUMERIC(5, 4)
-);
-
-CREATE TYPE jooq_test_catalog.measurement_reference AS (
-  source_name VARCHAR(255),
-  x1 NUMERIC(5, 4),
-  y1 NUMERIC(5, 4),
-  x2 NUMERIC(5, 4),
-  y2 NUMERIC(5, 4),
-  distance_milimeters NUMERIC(8, 4)
-);
-
-CREATE TABLE jooq_test_catalog.test_table (
+CREATE TABLE jooq_test_catalog.user (
   id INTEGER NOT NULL,
-  data jooq_test_catalog.prediction[] NOT NULL,
-  data_two jooq_test_catalog.prediction[] NOT NULL
+  name TEXT NOT NULL,
+  PRIMARY KEY(id)
 );
 
-CREATE TABLE jooq_test_catalog.test_table_other (
+CREATE TABLE jooq_test_catalog.thing (
   id INTEGER NOT NULL,
-  data jooq_test_catalog.measurement_reference[] NOT NULL,
-  data_two jooq_test_catalog.measurement_reference[] NOT NULL
+  description TEXT NOT NULL,
+  user_id INTEGER NOT NULL,
+  timestamp TIMESTAMPTZ NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES jooq_test_catalog.user(id) ON DELETE RESTRICT
 );

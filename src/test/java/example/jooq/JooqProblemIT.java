@@ -40,11 +40,18 @@ public class JooqProblemIT {
     }
 
     @Test
-    public void test() {
-        LOG.info("Running tests");
+    public void test1() {
+        LOG.info("Running test 1");
         final JooqProblem p = new JooqProblem();
 
         p.doTestOne(ctx);
+    }
+    
+    @Test
+    public void test2() {
+        LOG.info("Running test 2");
+        final JooqProblem p = new JooqProblem();
+
         p.doTestTwo(ctx);
     }
 }
