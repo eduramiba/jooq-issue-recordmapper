@@ -37,7 +37,7 @@ public class JooqProblem {
         ).from(THING)
                 .join(USER).on(USER.ID.eq(THING.USER_ID))
                 .where(THING.ID.eq(thingId))
-                .fetchOne(r -> r.into(ThingModel.Builder.class).build());
+                .fetchOneInto(ThingModel.class);
 
         Assert.assertNotNull(thing);
         Assert.assertEquals(thingId, (int) thing.getId());
