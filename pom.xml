@@ -20,10 +20,10 @@ e.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         <example.logback.version>1.2.3</example.logback.version>
         
         <example.postgresql.version>42.2.6</example.postgresql.version>
-        <example.jooq.version>3.11.11</example.jooq.version>
+        <example.jooq.version>3.12.0</example.jooq.version>
         <example.jakarta-annotation.api.version>1.3.4</example.jakarta-annotation.api.version>
         
-        <example.docker-maven-plugin.version>0.30.0</example.docker-maven-plugin.version>
+        <example.docker-maven-plugin.version>0.31.0</example.docker-maven-plugin.version>
         
         <!-- Test dependencies versions -->
         <example.junit.version>4.12</example.junit.version>
@@ -120,7 +120,7 @@ e.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                         <verbose>true</verbose>
                         <images>
                             <image>
-                                <name>postgres:10.5</name>
+                                <name>postgres:11.5</name>
                                 <run>
                                     <exposedPropertyKey>database-postgresql</exposedPropertyKey>
                                     <log>
