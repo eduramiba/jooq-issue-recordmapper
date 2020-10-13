@@ -26,7 +26,7 @@ e.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         <example.docker-maven-plugin.version>0.30.0</example.docker-maven-plugin.version>
         
         <!-- Test dependencies versions -->
-        <example.junit.version>4.12</example.junit.version>
+        <example.junit.version>4.13.1</example.junit.version>
         
         <example.maven-compiler-plugin.version>3.8.1</example.maven-compiler-plugin.version>
     </properties>
